@@ -47,13 +47,13 @@ routes.post("/login", (req, res, next) => {
     .then((user) => {
       if (user.length < 1) {
         return res.status(401).json({
-          message: "user Not exist",
+          message: "user Not existssssss",
         });
       } else {
         bcrpt.compare(req.body.pasword, user[0].pasword, (err, result) => {
           if (!result) {
             res.status(401).json({
-              message: "pasword not match",
+              message: "password does not match",
             });
           }
           ///here token is generte when name,pasword match from data,
