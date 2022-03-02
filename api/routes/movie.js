@@ -90,7 +90,7 @@ routes.delete("/:id", checkAuth, (req, res, next) => {
   Movie.remove({ _id: req.params.id })
     .then((result) => {
       res.status(200).json({
-        message: "Delete",
+        message: "Deleted",
         result: result,
       });
     })
