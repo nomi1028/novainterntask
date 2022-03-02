@@ -33,6 +33,22 @@ routes.get("/:genre", checkAuth, (req, res, next) => {
       });
     });
 });
+routes.get("/:actor", checkAuth, (req, res, next) => {
+  // console.log(req.params.genre);
+  Movie.find({ genre: req.params.genre })
+    .then((result) => {
+      res.status(200).json({
+        genre: req.params.genre,
+        movieData: result,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({
+        error: err,
+      });
+    });
+});
 /////
 routes.get("/:id", checkAuth, (req, res, next) => {
   Movie.findById(req.params.id)
