@@ -6,9 +6,10 @@ const movieSchema = new mongoose.Schema({
   name: String,
   genre: String,
   actor: String,
-  bussinessdone: String,
+  bussinessdone: Number,
   rating: Number,
   reviews: String,
+  posterpath:String,
 });
 /////////////create  Actor model(collection)& here Actor is collection and movieSchema is a schema
 module.exports = mongoose.model("Movie", movieSchema);

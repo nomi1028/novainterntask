@@ -6,6 +6,7 @@ const actorSchema = new mongoose.Schema({
   name: String,
   age: Number,
   gender: String,
+  imagepath:String,
 });
 /////////////create  Actor model(collection)& here Actor is collection and actorschema is a schema
 module.exports = mongoose.model("Actor", actorSchema);
